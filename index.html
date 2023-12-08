@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANALYSING NEW YORK CITY POLICE DEPARTMENT (NYPD) ARREST DATA FOR CRIME INSIGHTS AND POLICING STRATEGIES</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        iframe {
+            width: 100%;
+            height: calc(100vh - 50px);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">George Mason University</div>
+        <div class="nav-toggle">
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a href="home.html" class="active home-link">Home</a>
+                </li>
+                <li>
+                    <a href="project.html" class="project-link">Project</a>
+                </li>
+                <!-- <li>
+                    <a href="references.html" class="references-link">References</a>
+                </li> -->
+            </ul>
+        </nav>
+    </header>
+    <iframe class="content" src="home.html"></iframe>
+    <script>
+        const iframe = document.querySelector('.content');
+
+        function loadPage(url) {
+            iframe.src = url;
+        }
+
+        const homeLink = document.querySelector('.home-link');
+        homeLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            loadPage('home.html');
+        });
+
+        const projectLink = document.querySelector('.project-link');
+        projectLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            loadPage('project.html');
+        });
+
+        // const referencesLink = document.querySelector('.references-link');
+        // referencesLink.addEventListener('click', function(event) {
+        //     event.preventDefault();
+        //     loadPage('references.html');
+        // });
+
+        const hamburger = document.querySelector(".hamburger");
+        hamburger.onclick = function () {
+            const navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+        };
+    </script>
+</body>
+</html>
